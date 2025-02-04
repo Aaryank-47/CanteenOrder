@@ -3,7 +3,7 @@
 function About() {
   return (
     <div className="abtPg">
-      <div className="image"><img src="src\assets\aboutPgImg.webp" alt="" /></div>
+      <div className="image"><img src="https://st3.depositphotos.com/1001279/13052/i/450/depositphotos_130527246-stock-photo-kentucky-fried-chicken-cafe.jpg" alt="" /></div>
       <div className="text-abt">
         <h1>About Us</h1>
         <p>Welcome to <strong>[Website Name]</strong>, your ultimate solution for hassle-free food ordering in college canteens. We understand the challenges students face, from long queues to crowded ordering spaces, and have designed this platform to make your dining experience more convenient and enjoyable. <br /><br />
