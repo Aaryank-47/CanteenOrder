@@ -1,0 +1,41 @@
+.menuContainer {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .menuList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .menuItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    margin: 10px auto;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 400px;
+  }
+  
+  .itemName {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
+  .itemPrice {
+    font-size: 1.2rem;
+    color: #007bff;
+  }
+  

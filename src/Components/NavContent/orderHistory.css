@@ -1,0 +1,60 @@
+*::before{
+  content: none;
+  display: none;
+}
+
+.order-history-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .order-card {
+    background-color: #fff;
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    text-align: left;
+  }
+  
+  .order-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .order-items h3 {
+    margin: 10px 0 5px;
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .order-items ul {
+    list-style: disc;
+    margin: 0 0 10px 20px;
+    padding: 0;
+  }
+  .order-items>li{
+    list-style: none;
+  }
+  .order-items>li::before,
+  .order-items>li::marker{
+    content: none;
+    display: none;
+  }
+   
+  .order-total {
+    color: #007bff;
+    font-size: 1.2rem;
+    text-align: right;
+  }
+  
