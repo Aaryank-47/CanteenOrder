@@ -118,7 +118,7 @@
     }
 
     .nav-list {
-        display: flex;
+        display: none;
         position: absolute;
         top: -300px;
         left: 0;
@@ -133,8 +133,9 @@
         transition: transform 0.3s ease-in-out;
     }
 
-    .nav-list.active {
+    .nav-list:active {
         transform: translateY(-100%); /* Show Menu */
+        display: flex;
     }
 }   
 

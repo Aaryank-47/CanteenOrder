@@ -17,7 +17,8 @@ const NavPg = () => {
 
     // Ensure menu starts closed & handle screen resizing
     useEffect(() => {
-        setMobileView(false); // Close menu when component mounts
+        // setMobileView(false); 
+        // Close menu when component mounts
 
         const handleResize = () => {
             if (window.innerWidth > 715) {
@@ -38,40 +39,40 @@ const NavPg = () => {
                         <h1 className="logo">RESTRO</h1>
 
                         {/* Hamburger Menu */}
-                        <div className="hamburger" onClick={() => setMobileView(!isMobileView)}>
-                            {isMobileView ? <FaBars /> : <FaTimes />}
+                        <div className="hamburger" onClick={() => setMobileView(isMobileView)}>
+                            {isMobileView ? <FaTimes /> : <FaBars />}
                         </div>
 
                         {/* Navigation List */}
                         <ul className={`nav-list ${isMobileView ? "active" : ""}`}>
                             <li className="nav-item">
-                                <Link to="/" onClick={() => setMobileView(false)}>
+                                <Link to="/" onClick={() => setMobileView(true)}>
                                     Home
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/about" onClick={() => setMobileView(false)}>
+                                <Link to="/about" onClick={() => setMobileView(true)}>
                                     About US
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/menu" onClick={() => setMobileView(false)}>
+                                <Link to="/menu" onClick={() => setMobileView(true)}>
                                     Menu
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/info" onClick={() => setMobileView(false)}>
+                                <Link to="/info" onClick={() => setMobileView(true)}>
                                     Info
                                 </Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/orderhistory" onClick={() => setMobileView(false)}>
+                                <Link to="/orderhistory" onClick={() => setMobileView(true)}>
                                     Order History
                                 </Link>
                             </li>
                             <button className="nav-item" id="login" onClick={() => {
                                 setLoginOpen(true);
-                                setMobileView(false);
+                                setMobileView(true);
                             }}>
                                 LOGIN
                             </button>
