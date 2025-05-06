@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv"; 
 import connectDB from "./config/Database.js"
 import authRoutes from "./routers/authRouters.js"
+import authAdminRoutes from "./routers/authAdminRouters.js"
 import cookieParser from "cookie-parser"; 
 
 dotenv.config();
@@ -15,6 +16,7 @@ app.use(cookieParser());
 
 //ROUTERS
 app.use("/api/v1/users",authRoutes);
+app.use("/api/v1/admin",authAdminRoutes);
 
 //PORT 
 const port = process.env.PORT || 3000;

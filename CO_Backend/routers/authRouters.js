@@ -12,10 +12,9 @@ router.route("/signup").post(signup);
 router.route("/login").post(login);
 router.route("/logout").post(logout);
 router.route("/forgotPassword").post(forgotPassword);
-router.route("/resetPassword").post(resetPassword);
-router.route("/user").get(authMiddleware,(req,res)=>{
-    res.status(200).json({message:"User profile",user:req.user})
-})
+router.route("/resetPassword").post(authMiddleware,resetPassword);
+
+
 
 
 export default router;

@@ -36,6 +36,13 @@ const userSchema = new mongoose.Schema({
         type: Date,
         default: null
     },
+    usertype:{
+        type: String,
+        enum: ["admin", "user"],
+        default: "user",
+        required: [true, "Please select user type"]
+
+    }
 })
 
 const User = mongoose.model('User',userSchema);
