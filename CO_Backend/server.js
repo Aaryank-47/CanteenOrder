@@ -4,6 +4,8 @@ import connectDB from "./config/Database.js"
 import authRoutes from "./routers/authRouters.js"
 import authAdminRoutes from "./routers/authAdminRouters.js"
 import cookieParser from "cookie-parser"; 
+import foodRoutes from "./routers/foodsRouter.js";
+import profileRoutes from "./routers/profileRouters.js";
 
 dotenv.config();
 const app = express();
@@ -17,6 +19,8 @@ app.use(cookieParser());
 //ROUTERS
 app.use("/api/v1/users",authRoutes);
 app.use("/api/v1/admin",authAdminRoutes);
+app.use("/api/v1/foods",foodRoutes);
+app.use("/api/v1/profile",profileRoutes);
 
 //PORT 
 const port = process.env.PORT || 3000;
