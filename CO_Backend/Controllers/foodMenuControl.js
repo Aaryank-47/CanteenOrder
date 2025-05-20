@@ -70,36 +70,36 @@ export const getFoodMenu = async (req, res) => {
 };
 
 
-export const addFoodItem = async (req, res) => {
-    try {
-        const { foodName, foodPrice, foodImage, foodCategory, foodDescription, isVeg } = req.body;
+// export const addFoodItem = async (req, res) => {
+//     try {
+//         const { foodName, foodPrice, foodImage, foodCategory, foodDescription, isVeg } = req.body;
 
-        if (!foodName || !foodCategory || !foodPrice) {
-            return res.status(400).json({ message: "Please fill all the fields" });
-        }
+//         if (!foodName || !foodCategory || !foodPrice) {
+//             return res.status(400).json({ message: "Please fill all the fields" });
+//         }
 
-        const existingFood = await foodModel.findOne({ foodName });
-        if (existingFood) {
-            return res.status(400).json({ message: "Food item already in the menu" })
-        }
+//         const existingFood = await foodModel.findOne({ foodName });
+//         if (existingFood) {
+//             return res.status(400).json({ message: "Food item already in the menu" })
+//         }
 
-        const newFood = new foodModel({
-            foodName,
-            foodPrice,
-            foodImage,
-            foodCategory, foodDescription,
-            isVeg
-        })
+//         const newFood = new foodModel({
+//             foodName,
+//             foodPrice,
+//             foodImage,
+//             foodCategory, foodDescription,
+//             isVeg
+//         })
 
-        await newFood.save();
-        res.status(201).json({ message: "Food item added successfully", food: newFood });
+//         await newFood.save();
+//         res.status(201).json({ message: "Food item added successfully", food: newFood });
 
-    } catch (error) {
-        console.error("Error adding food item:", error);
-        res.status(500).json({ message: "Internal server error on adding foods to menu" });
+//     } catch (error) {
+//         console.error("Error adding food item:", error);
+//         res.status(500).json({ message: "Internal server error on adding foods to menu" });
 
-    }
-}
+//     }
+// }
 
 export const updateFoodItem = async (req, res) => {
 

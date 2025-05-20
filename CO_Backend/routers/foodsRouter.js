@@ -1,4 +1,4 @@
-import { getFoodMenu, addFoodItem, createFoodItem, updateFoodItem, deleteFoodItem, getAllFoodItems, getSingleFoodItem } from "../Controllers/foodMenuControl.js";
+import { getFoodMenu, createFoodItem, updateFoodItem, deleteFoodItem, getAllFoodItems, getSingleFoodItem } from "../Controllers/foodMenuControl.js";
 import express from "express";
 import {adminMiddleware} from "../middleware/adminMiddleware.js";
 import { authMiddleware } from "../middleware/authMiddleware.js";

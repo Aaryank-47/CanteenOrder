@@ -30,6 +30,10 @@ export const signup = async (req, res) => {
                 email,
                 password: hashPassword
             });
+            
+            if (!profileCreated) {
+                return res.status(400).json({ message: "Profile not created" });
+            }   
 
             const token = await generateToken(userCreated);
 

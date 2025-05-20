@@ -1,49 +1,53 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
-    name : {
+    name: {
         type: String,
-        required: true,
         trim: true
     },
-    college : {
+    college: {
         type: String,
-        required: true,
         trim: true
     },
-    contact : {
+    contact: {
         type: String,
-        required: true,
         match: [/^\d{10}$/, "Phone number must be 10 digits"]
     },
-    email : {
+    email: {
         type: String,
-        required: true,
         trim: true,
-        match : [/\S+@\S+\.\S+/,"Invalid email format"]
+        match: [/\S+@\S+\.\S+/, "Invalid email format"]
     },
-    password : {
+    password: {
         type: String,
-        required: true,
         trim: true,
         // match: [/^(?=.[a-z])(?=.[A-Z])(?=.*\d)(?=.*[@$!?&%*])[A-Za-z\d@$!%*?&]{8,}$/,"Password must contain atleast 8 characters, one uppercase, one lowercase, one symbol"]
     },
-    otp : {
+    profilePicture: {
+        type: String,
+        default: 'default.jpg'
+    },
+    otp: {
         type: String,
         default: null
     },
-    otpExpire : {
+    otpExpire: {
         type: Date,
         default: null
     },
-    usertype:{
+    usertype: {
         type: String,
         enum: ["admin", "user"],
         default: "user",
         required: [true, "Please select user type"]
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
+}, {
+    timestamps: true
+});
 
-    }
-})
-
-const User = mongoose.model('User',userSchema);
+const User = mongoose.model('User', userSchema);
 export default User;
