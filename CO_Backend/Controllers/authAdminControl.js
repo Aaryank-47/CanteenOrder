@@ -1,6 +1,6 @@
 import admin from "../models/adminModel.js";
 import bcrypt from "bcryptjs";
-import generateToken from "../utils/jwt.js";
+import {generateToken} from "../utils/jwt.js";
 import { OAuth2Client } from "google-auth-library";
 import dotenv from "dotenv";
 dotenv.config();

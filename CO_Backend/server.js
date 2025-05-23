@@ -6,6 +6,8 @@ import authAdminRoutes from "./routers/authAdminRouters.js"
 import cookieParser from "cookie-parser"; 
 import foodRoutes from "./routers/foodsRouter.js";
 import profileRoutes from "./routers/profileRouters.js";
+import orderRoutes from "./routers/orderRouter.js";
+import collegeRouters from "./routers/collegeRouters.js"
 
 dotenv.config();
 const app = express();
@@ -21,6 +23,9 @@ app.use("/api/v1/users",authRoutes);
 app.use("/api/v1/admin",authAdminRoutes);
 app.use("/api/v1/foods",foodRoutes);
 app.use("/api/v1/profile",profileRoutes);
+app.use("/api/v1/orders",orderRoutes);
+app.use("/api/v1/college",collegeRouters);
+
 
 //PORT 
 const port = process.env.PORT || 3000;

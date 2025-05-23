@@ -18,7 +18,7 @@ const orderSchema = new mongoose.Schema({
                 type: mongoose.SchemaTypes.ObjectId,
                 ref: 'Food'
             },
-            foodQunatity:{
+            foodQuantity:{
                 type: Number,
                 default: 1
             }
@@ -26,11 +26,12 @@ const orderSchema = new mongoose.Schema({
     ],
     status:{
         type: String,
-        enum: ["pending", "preparing", "ready", "delivered", "cancelled"],
+        enum: ["Pending", "Preparing", "Ready", "Delivered", "Cancelled"],
         default: "Pending"
     },
     totalPrice:{
-        type: Number
+        type: Number,
+        default: 0
     },
     createdAt:{
         type: Date,

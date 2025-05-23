@@ -1,6 +1,6 @@
 import user from "../models/authModels.js"
 import bcrypt from "bcryptjs";
-import generateToken from "../utils/jwt.js";
+import {generateToken} from "../utils/jwt.js";
 import { sendOtpMail } from "../utils/mailer.js"
 import generateotp from "../utils/otpGenerator.js";
 import { OAuth2Client } from "google-auth-library"
@@ -86,7 +86,11 @@ export const login = async (req, res) => {
             expires: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
             secure: false,
             sameSite: "none"
-        }).status(200).json({ message: "login successfully", userId: userExists._id.toString(), token: token });
+        }).status(200).json({ 
+            message: "login successfully", 
+            userId: userExists._id.toString(), 
+            token: token 
+        });
         console.log(token)
         //show cookie in console
         console.log("cookies:", req.cookies.token);
