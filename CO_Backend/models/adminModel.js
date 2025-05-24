@@ -1,6 +1,12 @@
 import mongoose from 'mongoose';
 
 const adminSchema = new mongoose.Schema({
+    // collegeId:{
+    //     type: mongoose.SchemaTypes.ObjectId,
+    //     ref: 'College',
+    //     unique: true,
+    //     trim: true
+    // },
     adminName: { 
         type: String, 
         required: true, 

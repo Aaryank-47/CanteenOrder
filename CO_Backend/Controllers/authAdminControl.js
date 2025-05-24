@@ -1,6 +1,6 @@
 import admin from "../models/adminModel.js";
 import bcrypt from "bcryptjs";
-import {generateToken} from "../utils/jwt.js";
+import {generateAdminToken} from "../utils/jwt.js";
 import { OAuth2Client } from "google-auth-library";
 import dotenv from "dotenv";
 dotenv.config();
@@ -31,8 +31,8 @@ export const adminSignup = async (req, res) => {
                 role,
             })
 
-            const token = await generateToken(adminCreated);
-            res.cookie("token", token, {
+            const token = await generateAdminToken(adminCreated);
+            res.cookie("adminToken", token, {
                 httpOnly: true,
                 expires: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
                 secure: false,
@@ -40,7 +40,7 @@ export const adminSignup = async (req, res) => {
             }).status(201).json({
                 message: "Admin created successfully",
                 adminId: adminCreated._id.toString(),
-                token: generateToken(adminCreated),
+                token: token,
                 adminInfo: adminCreated
             })
 

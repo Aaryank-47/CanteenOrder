@@ -37,7 +37,7 @@ export const signup = async (req, res) => {
 
             const token = await generateToken(userCreated);
 
-            res.cookie("token", token, {
+            res.cookie("userToken", token, {
                 httpOnly: true,
                 expires: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000),
                 secure: false,

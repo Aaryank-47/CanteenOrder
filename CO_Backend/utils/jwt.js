@@ -29,3 +29,17 @@ export const generateCollegeAuthToken= (college) => {
         
     }
 };
+
+
+export const generateAdminToken = (admin) =>{
+    try {
+        return jwt.sign(
+            { adminId: admin._id.toString(), email: admin.email },
+            jwt_secret,
+            { expiresIn: '5d' }
+        );
+    } catch (error) {
+        console.log(error);
+        
+    }
+}
